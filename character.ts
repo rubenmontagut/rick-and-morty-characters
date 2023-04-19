@@ -62,7 +62,7 @@ export const loadCharacters = async (n: number) => {
       );
     }
   }
-  console.log(characters);
+  return characters;
 };
 
 loadCharacters(50);
