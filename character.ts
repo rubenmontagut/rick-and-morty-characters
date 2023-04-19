@@ -22,3 +22,47 @@ export class Character {
     public created: Date
   ) {}
 }
+
+export const loadCharacters = async (n: number) => {
+  let characters: Array<Character> = [];
+  for (let i = 1; characters.length < n; i++) {
+    let response = await fetch(
+      `https://rickandmortyapi.com/api/character?page=${i}`
+    );
+    const { results } = (await response.json()) as { results: any[] };
+    for (const {
+      id,
+      name,
+      status,
+      species,
+      type,
+      gender,
+      origin,
+      location,
+      image,
+      episode,
+      url,
+      created,
+    } of results) {
+      characters.push(
+        new Character(
+          id,
+          name,
+          status,
+          species,
+          type,
+          gender,
+          origin,
+          location,
+          image,
+          episode,
+          url,
+          created
+        )
+      );
+    }
+  }
+  console.log(characters);
+};
+
+loadCharacters(50);
