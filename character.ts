@@ -64,5 +64,3 @@ export const loadCharacters = async (n: number) => {
   }
   return characters;
 };
-
-loadCharacters(50);
