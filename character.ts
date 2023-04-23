@@ -20,7 +20,9 @@ export class Character {
     public episode: string[],
     public url: string,
     public created: Date
-  ) {}
+  ) {
+    this.created = new Date(created);
+  }
 }
 
 export const loadCharacters = async (n: number) => {
