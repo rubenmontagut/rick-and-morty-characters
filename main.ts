@@ -4,7 +4,7 @@ import { loadCharacters } from "./character.js";
 
 const characters = await loadCharacters(100);
 const html = render(characters);
-await writeFile("users.html", html);
+await writeFile("characters.html", html);
 
 const main = async () => {
   const characters = await loadCharacters(100);
