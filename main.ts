@@ -9,7 +9,6 @@ await writeFile("characters.html", html);
 const main = async () => {
   const characters = await loadCharacters(100);
   const html = render(characters);
-  await writeFile("index.html", html);
 
   for (const character of characters) {
     const characterHtml = renderCharacter(character);
